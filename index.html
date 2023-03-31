@@ -9,7 +9,49 @@
 </head>
 <body>
     <header>
-        
+        <div class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#a2d9ff" fill-opacity="1" d="M0,288L30,282.7C60,277,120,267,180,240C240,213,300,171,360,149.3C420,128,480,128,540,133.3C600,139,660,149,720,149.3C780,149,840,139,900,144C960,149,1020,171,1080,176C1140,181,1200,171,1260,165.3C1320,160,1380,160,1410,160L1440,160L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+            </svg>
+        </div>
+        <img class="logo" src="imgs/umbrella-removebg-preview.png">
     </header>
+    <main>
+        <section class="location">
+            <h4>Locality to check:</h4>
+            <form>
+                <input class="location_input" id="loc" placeholder="Locality...">
+            </form>
+        </section>
+        <section class="weather_view">
+            <div class="weather_card">
+                <img src="imgs/danieledesantis-weather-icons-rainy.svg">
+                <p>rain</p>
+                <p class="temp">t <strong>19</strong>c</p>
+                <a href="#">more info</a>
+            </div>
+            <div class="buttons">
+                <div class="prev-button">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="white"/>
+                        <path d="M57.3848 36.3609L43.6152 50.2904" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
+                        <path d="M43.6152 50.2904L57.3848 64.2199" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
+                    </svg>
+                </div>
+                <div class="next-button">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="white"/>
+                        <path d="M42.6152 36.2305L56.3848 50" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
+                        <path d="M56.3848 50L42.6152 63.7695" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FEF756" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,234.7C320,235,400,181,480,160C560,139,640,149,720,138.7C800,128,880,96,960,96C1040,96,1120,128,1200,133.3C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        </svg>
+    </footer>
 </body>
 </html>
