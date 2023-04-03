@@ -20,33 +20,20 @@
     <main>
         <section class="location">
             <h4>Locality to check:</h4>
-            <form>
+            <div class="some_loc">
+                <button class="location_btn"></button>
                 <input class="location_input" id="loc" placeholder="Locality..." spellcheck="false">
-            </form>
+            </div>
+            <p class="error">Invalid city name</p>
         </section>
         <section class="weather_view">
             <div class="weather_card">
                 <p class="city">City</p>
-                <img src="imgs/danieledesantis-weather-icons-rainy.svg">
-                <p>rain</p>
+                <img src="imgs/weather-icons-rain.svg" class="weather_icon">
+                <p class="current_weather_type">Rain</p>
                 <p class="temp">t <strong>19</strong>c</p>
                 <a href="#">more info</a>
             </div>
-            <div class="buttons">
-                <div class="prev-button">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="50" fill="white"/>
-                        <path d="M57.3848 36.3609L43.6152 50.2904" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
-                        <path d="M43.6152 50.2904L57.3848 64.2199" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
-                    </svg>
-                </div>
-                <div class="next-button">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="50" fill="white"/>
-                        <path d="M42.6152 36.2305L56.3848 50" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
-                        <path d="M56.3848 50L42.6152 63.7695" stroke="#2F3435" stroke-width="12" stroke-miterlimit="10" stroke-linecap="square"/>
-                    </svg>
-                </div>
             </div>
         </section>
     </main>
