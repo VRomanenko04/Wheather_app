@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
     <title>Weather app</title>
 </head>
 <body>
@@ -20,11 +21,12 @@
         <section class="location">
             <h4>Locality to check:</h4>
             <form>
-                <input class="location_input" id="loc" placeholder="Locality...">
+                <input class="location_input" id="loc" placeholder="Locality..." spellcheck="false">
             </form>
         </section>
         <section class="weather_view">
             <div class="weather_card">
+                <p class="city">City</p>
                 <img src="imgs/danieledesantis-weather-icons-rainy.svg">
                 <p>rain</p>
                 <p class="temp">t <strong>19</strong>c</p>
