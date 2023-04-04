@@ -23,11 +23,13 @@ async function checkWeather(city) {
         if (data.weather[0].main == "Clouds"){
             weatherIcon.src = 'imgs/weather-icons-cloudy.svg';
         } else if (data.weather[0].main == "Rain"){
-            weatherIcon.scr = 'imgs/weather-icons-rain.svg';
+            weatherIcon.src = 'imgs/weather-icons-rain.svg';
         } else if (data.weather[0].main == "Clear"){
-            weatherIcon.scr = 'imgs/weather-icons-sunny.svg';
+            weatherIcon.src = 'imgs/weather-icons-sunny.svg';
         } else if (data.weather[0].main == "Snow"){
-            weatherIcon.scr = 'imgs/weather-icons-snow.svg';
+            weatherIcon.src = 'imgs/weather-icons-snow.svg';
+        } else {
+            weatherIcon.src = 'imgs/weather-icons-socloudy.svg';
         }
         document.querySelector('.weather_view').style.display = 'flex';
         document.querySelector('.error').style.display = 'none';
