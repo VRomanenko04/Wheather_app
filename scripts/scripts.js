@@ -35,6 +35,19 @@ async function checkWeather(city) {
         }
         document.querySelector('.weather_view').style.display = 'flex';
         document.querySelector('.error').style.display = 'none';
+
+        // Модальное окно с дополнительной инфой
+        document.querySelector('.weather_info').addEventListener('click', () => {
+            Swal.fire({
+                icon: 'info',
+                text: `Now is ${data.weather[0].description},
+                wind speed is ${data.wind.speed} km/h and humidity is ${data.main.humidity}%.`,
+                confirmButtonText: 'Thanks!',
+                customClass: {
+                    confirmButton: 'modal-btn',
+                },
+            });
+        });
     }
 }
 
@@ -49,3 +62,4 @@ searchBox.addEventListener('keyup', event => {
         checkWeather(searchBox.value);
     }
 });
+

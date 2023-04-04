@@ -109,7 +109,7 @@ input {
     font-size: 40px;
 }
 
-.weather_card a {
+.weather_info {
     margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -124,10 +124,16 @@ input {
     border-radius: 15px;
 }
 
-.weather_card a:hover {
+.weather_info:hover {
     border: 2px solid #000000;
 }
 
 .temp {
     font-size: 58px !important;
+}
+
+.modal-btn {
+    background-color: rgba(64, 221, 255, 0.9) !important;
+    color: #000 !important;
+    border: 1px solid #000000 !important;
 }
