@@ -5,6 +5,8 @@ const searchBox = document.querySelector('.location_input');
 const searchBtn = document.querySelector('.location_btn');
 const weatherIcon = document.querySelector('.weather_icon');
 
+// фетчим Api, принимаем город из инпут поля, отправляем запрос, проверяем на ошибку 404, 
+// принимаем await в json формате, отображаем нужные данные пользователю.
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
@@ -36,6 +38,7 @@ async function checkWeather(city) {
     }
 }
 
+// Вызов функции по клику на поиск
 searchBtn.addEventListener('click', () => {
     checkWeather(searchBox.value);
 });
