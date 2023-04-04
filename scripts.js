@@ -6,7 +6,7 @@ const searchBtn = document.querySelector('.location_btn');
 const weatherIcon = document.querySelector('.weather_icon');
 
 // фетчим Api, принимаем город из инпут поля, отправляем запрос, проверяем на ошибку 404, 
-// принимаем await в json формате, отображаем нужные данные пользователю.
+// принимаем response в json формате, отображаем нужные данные пользователю.
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
