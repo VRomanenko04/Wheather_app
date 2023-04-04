@@ -32,16 +32,20 @@ header {
     align-items: center;
     flex-direction: column;
 }
+
 .location h4 {
     color: #ffffff;
     font-size: 64px;
 }
+
 input {
     padding-left:30px;
 }
+
 .some_loc {
     display: flex;
 }
+
 .location_input {
     box-sizing: border-box;
     background-color: #ffffff;
@@ -50,17 +54,24 @@ input {
     height: 100px;
     border: 2px solid #000000;
 }
+
 .location_btn {
     height: 100px;
     width: 100px;
     cursor: pointer;
     background-image: url(imgs/icons8-search.svg);
     background-repeat: no-repeat;
-    border: none;
+    border: solid 1px #000;
     background-position: center;
     background-color: #ffffff;
     margin-right: 10px;
+    transition: background-color 600ms;
 }
+
+.location_btn:hover {
+    background-color: rgba(64, 221, 255, 0.9);
+}
+
 .error {
     color: #ff0000;
     font-size: 20px;
@@ -120,4 +131,3 @@ input {
 .temp {
     font-size: 58px !important;
 }
-
