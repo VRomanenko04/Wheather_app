@@ -6,6 +6,7 @@
 }
 
 body {
+    position: relative;
     background-color: #1E1E1E;
     font-family: 'Cairo', sans-serif;
 }
@@ -59,7 +60,7 @@ input {
     height: 100px;
     width: 100px;
     cursor: pointer;
-    background-image: url(imgs/icons8-search.svg);
+    background-image: url(../imgs/icons8-search.svg);
     background-repeat: no-repeat;
     border: solid 1px #000;
     background-position: center;
