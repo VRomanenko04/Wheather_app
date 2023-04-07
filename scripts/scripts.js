@@ -72,8 +72,14 @@ const apiAutoUrl = 'https://dataservice.accuweather.com/locations/v1/cities/auto
 async function autocompl(userInput) {
     const response = await fetch(apiAutoUrl + `apikey=${apiAutoKey}&q=${userInput}&language=en-us`);
     let cityData = await response.json();
-
-    console.log(cityData);
+    let citys = [];
+    for (let i = 0; i < cityData.length; i++) {
+        citys.push(cityData[i].LocalizedName);
+    }
+    const filteredCitys = citys.filter((item, index) => {
+        return citys.indexOf(item) === index;
+    });
+    console.log(filteredCitys);
 }
 
 searchBox.addEventListener('keyup', () => {
