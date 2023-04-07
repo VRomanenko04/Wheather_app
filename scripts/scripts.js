@@ -1,3 +1,4 @@
+// Реализация прогноза погоды
 const apiKey = "0b088991fa7193f84a7de3c4c7d2ce30";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 
@@ -63,3 +64,18 @@ searchBox.addEventListener('keyup', event => {
     }
 });
 
+
+// Реализация Autocomplete
+const apiAutoKey = 'xKVODp3PzhvLy8hHVhjEuUu8vmhLCdq1';
+const apiAutoUrl = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete?';
+
+async function autocompl(userInput) {
+    const response = await fetch(apiAutoUrl + `apikey=${apiAutoKey}&q=${userInput}&language=en-us`);
+    let cityData = await response.json();
+
+    console.log(cityData);
+}
+
+searchBox.addEventListener('keyup', () => {
+    autocompl(searchBox.value);
+});
