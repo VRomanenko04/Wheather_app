@@ -5,6 +5,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=
 const searchBox = document.querySelector('.location_input');
 const searchBtn = document.querySelector('.location_btn');
 const weatherIcon = document.querySelector('.weather_icon');
+const autocomplItems = document.querySelectorAll('.list-items');
 
 // фетчим Api, принимаем город из инпут поля, отправляем запрос, проверяем на ошибку 404, 
 // принимаем response в json формате, отображаем нужные данные пользователю.
@@ -104,9 +105,12 @@ searchBox.addEventListener('keyup', () => {
                     // Показываем пользователю список
                     listItem.innerHTML = searchCity;
                     document.querySelector('.list').appendChild(listItem);
+                    listItem.addEventListener('click', () => {
+                        checkWeather(searchBox.value);
+                    });
+                    }
             }
-        }
-    });
+        });
 });
 
 function displayNames(value) {
