@@ -73,15 +73,50 @@ async function autocompl(userInput) {
     const response = await fetch(apiAutoUrl + `apikey=${apiAutoKey}&q=${userInput}&language=en-us`);
     let cityData = await response.json();
     let citys = [];
-    for (let i = 0; i < cityData.length; i++) {
-        citys.push(cityData[i].LocalizedName);
+    if (cityData !== null && cityData !== undefined) {
+        for (let i = 0; i < cityData.length; i++) {
+            citys.push(cityData[i].LocalizedName);
+        }
+        const filteredCitys = citys.filter((item, index) => {
+            return citys.indexOf(item) === index;
+        });
+        return filteredCitys;
     }
-    const filteredCitys = citys.filter((item, index) => {
-        return citys.indexOf(item) === index;
-    });
-    console.log(filteredCitys);
 }
 
 searchBox.addEventListener('keyup', () => {
-    autocompl(searchBox.value);
+    autocompl(searchBox.value).then((resolvedValue) => {
+        let newCitysArray = resolvedValue;
+        //Убираем все элементы, если пользователь ужё ввёл слово
+        removeElements();
+        for (let i of newCitysArray) {
+            if (
+                i.toLowerCase().startsWith(searchBox.value.toLowerCase()) && 
+                searchBox.value != ''
+                ) {
+                    //создаём li елемент
+                    let listItem = document.createElement("li");
+                    listItem.classList.add("list-items");
+                    listItem.style.cursor = 'pointer';
+                    listItem.setAttribute("onclick", "displayNames('" + i + "')");
+                    let searchCity = "<b>" + i.substring(0, searchBox.value.length) + "</b>";
+                    searchCity+= i.substring(searchBox.value.length);
+                    // Показываем пользователю список
+                    listItem.innerHTML = searchCity;
+                    document.querySelector('.list').appendChild(listItem);
+            }
+        }
+    });
 });
+
+function displayNames(value) {
+    searchBox.value = value;
+    removeElements();
+}
+
+function removeElements() {
+    let items = document.querySelectorAll('.list-items');
+    items.forEach((item) => {
+        item.remove();
+    });
+}

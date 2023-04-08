@@ -22,10 +22,13 @@
     <main>
         <section class="location">
             <h4>Locality to check:</h4>
-            <div class="some_loc">
+            <form autocomplete="off" class="some_loc">
                 <a class="location_btn"></a>
-                <input class="location_input" id="loc" placeholder="Locality..." spellcheck="false">
-            </div>
+                <div class="autocomp-place">
+                    <input type="text" class="location_input" placeholder="Locality..." spellcheck="false">
+                    <ul class="list"></ul>
+                </div>
+            </form>
             <p class="error">Invalid city name</p>
         </section>
         <section class="weather_view">
