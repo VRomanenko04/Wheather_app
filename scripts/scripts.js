@@ -60,11 +60,10 @@ searchBtn.addEventListener('click', () => {
 
 // Вызов функции по клавише enter
 searchBox.addEventListener('keyup', event => {
-    if( event.code === 'Enter' ) {
+    if(event.code === 'Enter') {
         checkWeather(searchBox.value);
     }
 });
-
 
 // Реализация Autocomplete
 const apiAutoKey = 'DVG7Ld7hEVgFcL4RaoteC0LSYo0VwlQN';
@@ -85,32 +84,35 @@ async function autocompl(userInput) {
     }
 }
 
-searchBox.addEventListener('keyup', () => {
-    autocompl(searchBox.value).then((resolvedValue) => {
-        let newCitysArray = resolvedValue;
-        //Убираем все элементы, если пользователь ужё ввёл слово
-        removeElements();
-        for (let i of newCitysArray) {
-            if (
-                i.toLowerCase().startsWith(searchBox.value.toLowerCase()) && 
-                searchBox.value != ''
-                ) {
-                    //создаём li елемент
-                    let listItem = document.createElement("li");
-                    listItem.classList.add("list-items");
-                    listItem.style.cursor = 'pointer';
-                    listItem.setAttribute("onclick", "displayNames('" + i + "')");
-                    let searchCity = "<b>" + i.substring(0, searchBox.value.length) + "</b>";
-                    searchCity+= i.substring(searchBox.value.length);
-                    // Показываем пользователю список
-                    listItem.innerHTML = searchCity;
-                    document.querySelector('.list').appendChild(listItem);
-                    listItem.addEventListener('click', () => {
-                        checkWeather(searchBox.value);
-                    });
-                    }
-            }
-        });
+searchBox.addEventListener('keyup', incedent => {
+    if (incedent !== 'Enter') {
+        autocompl(searchBox.value).then((resolvedValue) => {
+            let newCitysArray = resolvedValue;
+            //Убираем все элементы, если пользователь ужё ввёл слово
+            removeElements();
+            for (let i of newCitysArray) {
+                if (
+                    i.toLowerCase().startsWith(searchBox.value.toLowerCase()) && 
+                    searchBox.value != ''
+                    ) {
+                        //создаём li елемент
+                        let listItem = document.createElement("li");
+                        listItem.classList.add("list-items");
+                        listItem.style.cursor = 'pointer';
+                        listItem.setAttribute("onclick", "displayNames('" + i + "')");
+                        let searchCity = "<b>" + i.substring(0, searchBox.value.length) + "</b>";
+                        searchCity+= i.substring(searchBox.value.length);
+                        // Показываем пользователю список
+                        listItem.innerHTML = searchCity;
+                        document.querySelector('.list').appendChild(listItem);
+                        // Ивент по клику на название в списке
+                        listItem.addEventListener('click', () => {
+                            checkWeather(searchBox.value);
+                        });
+                        }
+                }
+            });
+    }
 });
 
 function displayNames(value) {
