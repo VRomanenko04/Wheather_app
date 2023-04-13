@@ -55,12 +55,12 @@ async function checkWeather(city) {
 
 // Вызов функции по клику на поиск
 searchBtn.addEventListener('click', () => {
-    checkWeather(searchBox.value);
+    checkWeather(searchBox.value); 
 });
 
 // Вызов функции по клавише enter
 searchBox.addEventListener('keyup', event => {
-    if(event.code === 'Enter') {
+    if (event.code === 'Enter') {
         checkWeather(searchBox.value);
     }
 });
