@@ -66,7 +66,7 @@ searchBox.addEventListener('keyup', event => {
 });
 
 // Реализация Autocomplete
-const apiAutoKey = 'DVG7Ld7hEVgFcL4RaoteC0LSYo0VwlQN';
+const apiAutoKey = 'QJx4o7dnCvgKGTNU3G4JPOTbEqnfzA8b';
 const apiAutoUrl = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete?';
 
 async function autocompl(userInput) {
